@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="postgres@vhealth.me">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.37">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.38">
     <root id="1">
       <DateStyle>mdy</DateStyle>
       <IntrospectionStateNumber>860</IntrospectionStateNumber>
@@ -7681,14 +7681,14 @@ true posixrules
       <TypeId>1184</TypeId>
     </column>
     <index id="520" parent="512" name="PK_Users">
-      <ClassIds>10065</ClassIds>
       <ColNames>Id</ColNames>
-      <CollationIds>0</CollationIds>
       <ObjectId>16558</ObjectId>
       <Primary>1</Primary>
       <StateNumber>847</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <ClassIds>10065</ClassIds>
+      <CollationIds>0</CollationIds>
     </index>
     <key id="521" parent="512" name="PK_Users">
       <ColNames>Id</ColNames>
@@ -7712,15 +7712,15 @@ true posixrules
       <TypeId>1043</TypeId>
     </column>
     <index id="524" parent="513" name="PK___EFMigrationsHistory">
-      <ClassIds>3126</ClassIds>
       <ColNames>MigrationId</ColNames>
-      <CollationIds>100</CollationIds>
-      <CollationNames>default</CollationNames>
       <ObjectId>16551</ObjectId>
       <Primary>1</Primary>
       <StateNumber>846</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <ClassIds>3126</ClassIds>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
     </index>
     <key id="525" parent="513" name="PK___EFMigrationsHistory">
       <ColNames>MigrationId</ColNames>

@@ -42,8 +42,7 @@ namespace JwtWebApiTutorial.Controllers
         public async Task<ActionResult<User>> Register(UserRequest request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
-
-
+            
             var user = new User
             {
                 Username = request.Username,
