@@ -9,6 +9,9 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions options) : base(options)
     {}
 
-    // DbSet => reprezentarea unui tabel
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<User>().HasIndex(u => u.Username).IsUnique();
+    }
     public DbSet<User> Users { get; set; }
 }
