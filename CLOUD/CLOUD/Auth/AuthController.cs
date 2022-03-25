@@ -57,7 +57,7 @@ namespace CLOUD.Auth
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(UserRequest request)
+        public async Task<ActionResult<Jwt>> Login(UserRequest request)
         {
             var user = await _dbContext.Users.FirstOrDefaultAsync(user => user.Username == request.Username);
             if (user.Username != request.Username)
@@ -71,7 +71,10 @@ namespace CLOUD.Auth
             }
 
             string token = CreateToken(user);
-            return Ok(token);
+            return new Jwt()
+            {
+                Value = token
+            };
         }
 
         private string CreateToken(User user)
