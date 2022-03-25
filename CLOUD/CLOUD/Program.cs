@@ -52,17 +52,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();  
-
-app.UseCors(x => x
-    .AllowAnyOrigin()
-    .AllowAnyMethod()
-    .AllowAnyHeader());
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 app.Run();
