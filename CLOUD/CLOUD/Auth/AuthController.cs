@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using CLOUD.Auth.UserService;
 using CLOUD.DataBase;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

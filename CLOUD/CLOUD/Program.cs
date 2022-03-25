@@ -2,6 +2,7 @@ using System.Text;
 using CLOUD.Auth.UserService;
 using CLOUD.DataBase;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -40,9 +41,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+
+
 var connectionString =builder.Configuration.GetSection("AppSettings:connectionString").Value;
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
 
+//services cors
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -59,7 +67,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+//app cors
+app.UseCors("corsapp");
 app.UseCors(x => x
     .AllowAnyOrigin()
     .AllowAnyMethod()
