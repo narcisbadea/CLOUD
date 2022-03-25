@@ -27,10 +27,13 @@ namespace CLOUD.Auth
         }
 
         [HttpGet, Authorize]
-        public ActionResult<string> GetMe()
+        public IActionResult GetMe()
         {
            var userName = _userService.GetMyName();
-           return Ok(userName);
+           return Ok(new
+           {
+               userName
+           });
 
             //var userName = User?.Identity?.Name;
             //var userName2 = User.FindFirstValue(ClaimTypes.Name);
