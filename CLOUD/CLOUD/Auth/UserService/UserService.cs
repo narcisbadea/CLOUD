@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace JwtWebApiTutorial.Services.UserService
+namespace CLOUD.Auth.UserService
 {
     public class UserService : IUserService
     {

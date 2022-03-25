@@ -1,4 +1,4 @@
-namespace DotnetExample;
+namespace CLOUD;
 
 public abstract class Entity
 {

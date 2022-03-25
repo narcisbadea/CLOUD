@@ -6,7 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/UserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/UserRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/UserService/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/UserService/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/UserService/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/UserService/UserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CLOUD/DataBase/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/DataBase/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220324213017_init.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Migrations/20220324213017_init.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220325142236_constraint.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Migrations/20220325142236_constraint.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220325142759_constraintV0.1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Migrations/20220325142759_constraintV0.1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +105,7 @@
       <workItem from="1648155392836" duration="5449000" />
       <workItem from="1648211807888" duration="1744000" />
       <workItem from="1648216364005" duration="1211000" />
-      <workItem from="1648217892851" duration="335000" />
+      <workItem from="1648217892851" duration="1096000" />
     </task>
     <servers />
   </component>

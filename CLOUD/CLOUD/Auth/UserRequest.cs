@@ -1,4 +1,4 @@
-﻿namespace JwtWebApiTutorial
+﻿namespace CLOUD.Auth
 {
     public class UserRequest
     {

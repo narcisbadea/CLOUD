@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using DotnetExample.Database;
-using JwtWebApiTutorial.Services.UserService;
+using CLOUD.Auth.UserService;
+using CLOUD.DataBase;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
-namespace JwtWebApiTutorial.Controllers
+namespace CLOUD.Auth
 {
     [Route("[controller]")]
     [ApiController]

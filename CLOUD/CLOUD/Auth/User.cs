@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using DotnetExample;
+using System.Diagnostics.CodeAnalysis;
 
-namespace JwtWebApiTutorial
+namespace CLOUD.Auth
 {
     public class User : Entity
     {
         [Required]
+        [NotNull]
         public string Username { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }

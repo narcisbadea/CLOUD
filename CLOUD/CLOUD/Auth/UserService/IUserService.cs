@@ -1,4 +1,4 @@
-﻿namespace JwtWebApiTutorial.Services.UserService
+﻿namespace CLOUD.Auth.UserService
 {
     public interface IUserService
     {

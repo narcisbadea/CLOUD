@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CLOUD.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220325142759_constraintV0.1")]
-    partial class constraintV01
+    [Migration("20220325143241_constraintV0.2")]
+    partial class constraintV02
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

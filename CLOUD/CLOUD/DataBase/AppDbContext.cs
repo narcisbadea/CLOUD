@@ -1,7 +1,7 @@
-using JwtWebApiTutorial;
+using CLOUD.Auth;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotnetExample.Database;
+namespace CLOUD.DataBase;
 
 // DbContext => reprezentarea bazei de date
 public class AppDbContext : DbContext

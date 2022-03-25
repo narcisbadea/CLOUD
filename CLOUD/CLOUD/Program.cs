@@ -1,6 +1,6 @@
 using System.Text;
-using DotnetExample.Database;
-using JwtWebApiTutorial.Services.UserService;
+using CLOUD.Auth.UserService;
+using CLOUD.DataBase;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
