@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CLOUD.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,9 +13,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CLOUD.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220411201719_update5")]
+    partial class update5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,11 +95,11 @@ namespace CLOUD.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("PacientId")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("Updated")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
 
                     b.Property<List<float>>("Valori")
                         .IsRequired()
@@ -105,7 +107,7 @@ namespace CLOUD.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PacientId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Ecgs");
                 });
@@ -278,18 +280,18 @@ namespace CLOUD.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("PacientId")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("Updated")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
 
                     b.Property<float>("Valoare")
                         .HasColumnType("real");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PacientId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Pulss");
                 });
@@ -303,18 +305,18 @@ namespace CLOUD.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("PacientId")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("Updated")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
 
                     b.Property<int>("Valoare")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PacientId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Temperaturi");
                 });
@@ -328,18 +330,18 @@ namespace CLOUD.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("PacientId")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("Updated")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
 
                     b.Property<float>("Valoare")
                         .HasColumnType("real");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PacientId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Umiditates");
                 });
@@ -404,13 +406,13 @@ namespace CLOUD.Migrations
 
             modelBuilder.Entity("CLOUD.Auth.ECG", b =>
                 {
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
+                    b.HasOne("CLOUD.Auth.User", "User")
                         .WithMany()
-                        .HasForeignKey("PacientId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Pacient");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CLOUD.Auth.Medic", b =>
@@ -464,35 +466,35 @@ namespace CLOUD.Migrations
 
             modelBuilder.Entity("CLOUD.Auth.Puls", b =>
                 {
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
+                    b.HasOne("CLOUD.Auth.User", "User")
                         .WithMany()
-                        .HasForeignKey("PacientId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Pacient");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CLOUD.Auth.Temperatura", b =>
                 {
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
+                    b.HasOne("CLOUD.Auth.User", "User")
                         .WithMany()
-                        .HasForeignKey("PacientId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Pacient");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CLOUD.Auth.Umiditate", b =>
                 {
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
+                    b.HasOne("CLOUD.Auth.User", "User")
                         .WithMany()
-                        .HasForeignKey("PacientId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Pacient");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CLOUD.Auth.DateMedicale", b =>

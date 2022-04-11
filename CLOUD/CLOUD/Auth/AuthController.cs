@@ -40,6 +40,15 @@ namespace CLOUD.Auth
             //var role = User.FindFirstValue(ClaimTypes.Role);
             //return Ok(new { userName, userName2, role });
         }
+        
+        [HttpGet("Date")]
+        public async Task<List<User>> GetByDate()
+        {
+            var li = await _dbContext.Users.Where(u => u.Created.Hour == 15) .ToListAsync();
+            return li;
+        }
+
+        
 
         [HttpPost("register")]
         public async Task<ActionResult<User>> Register(UserRequest request)
