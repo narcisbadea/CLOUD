@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CLOUD/Base/EntityBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/Alergie.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/DateMedicale.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/ECG.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/IstoricMedical.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/Judet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/Medic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/MedicPacienti.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/Pacient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/Puls.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/Temperatura.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Models/Umiditate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/UserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Views/UserRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/CLOUD.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/CLOUD.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/DataBase/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/DataBase/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Base/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220324213017_init.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220324213017_init.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220325142236_constraint.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220325142236_constraint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220325142759_constraintV0.1.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220325142759_constraintV0.1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220325143241_constraintV0.2.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220325143241_constraintV0.2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
-    </list>
+    <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,6 +100,7 @@
       <workItem from="1649536085703" duration="57000" />
       <workItem from="1649705408250" duration="3466000" />
       <workItem from="1649709204947" duration="33000" />
+      <workItem from="1649751583746" duration="174000" />
     </task>
     <servers />
   </component>
