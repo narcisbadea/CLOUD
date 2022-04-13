@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
-namespace CLOUD.Auth
+namespace CLOUD
 {
     public class User : Entity
     {

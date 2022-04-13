@@ -1,4 +1,4 @@
-﻿namespace CLOUD.Auth
+﻿namespace CLOUD
 {
     public class UserRequest
     {

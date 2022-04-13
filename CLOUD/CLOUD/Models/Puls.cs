@@ -1,6 +1,6 @@
-﻿namespace CLOUD.Auth;
+﻿namespace CLOUD;
 
-public class Puls:Entity
+public class Puls:EntityBase
 {
     public float Valoare { get; set; }
     public Pacient Pacient { get; set; }

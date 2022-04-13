@@ -1,4 +1,4 @@
-﻿namespace CLOUD.Auth.UserService
+﻿namespace CLOUD.UserService
 {
     public interface IUserService
     {

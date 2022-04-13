@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
-namespace CLOUD.Auth;
+namespace CLOUD;
 
 public class Pacient : Entity
 {

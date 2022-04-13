@@ -23,7 +23,7 @@ namespace CLOUD.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("CLOUD.Auth.Alergie", b =>
+            modelBuilder.Entity("CLOUD.Auth.Temperatura", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,32 +32,50 @@ namespace CLOUD.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid?>("DateMedicaleId")
+                    b.Property<Guid>("PacientId")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Simptome")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TipAlergie")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("Updated")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int>("Valoare")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DateMedicaleId");
+                    b.HasIndex("PacientId");
 
-                    b.ToTable("Alergii");
+                    b.ToTable("Temperatura");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.DateMedicale", b =>
+            modelBuilder.Entity("CLOUD.Auth.Umiditate", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("PacientId")
+                        .HasColumnType("uuid");
+
+                    b.Property<float>("Valoare")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PacientId");
+
+                    b.ToTable("Umiditate");
+                });
+
+            modelBuilder.Entity("CLOUD.DateMedicale", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<List<string>>("Alergii")
+                        .IsRequired()
+                        .HasColumnType("text[]");
 
                     b.Property<string>("ConsulatatiiCardiologice")
                         .IsRequired()
@@ -66,8 +84,9 @@ namespace CLOUD.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("IstoricMedicalId")
-                        .HasColumnType("uuid");
+                    b.Property<string>("IstoricMedical")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<Guid>("PacientId")
                         .HasColumnType("uuid");
@@ -77,14 +96,12 @@ namespace CLOUD.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IstoricMedicalId");
-
                     b.HasIndex("PacientId");
 
                     b.ToTable("DateMedicale");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.ECG", b =>
+            modelBuilder.Entity("CLOUD.ECG", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -95,9 +112,6 @@ namespace CLOUD.Migrations
 
                     b.Property<Guid>("PacientId")
                         .HasColumnType("uuid");
-
-                    b.Property<DateTime>("Updated")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<List<float>>("Valori")
                         .IsRequired()
@@ -107,35 +121,10 @@ namespace CLOUD.Migrations
 
                     b.HasIndex("PacientId");
 
-                    b.ToTable("Ecgs");
+                    b.ToTable("Ecg");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.IstoricMedical", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("ProblemaMedicala")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Tratament")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("Updated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("IstoricMedicals");
-                });
-
-            modelBuilder.Entity("CLOUD.Auth.Judet", b =>
+            modelBuilder.Entity("CLOUD.Judet", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -150,7 +139,7 @@ namespace CLOUD.Migrations
                     b.ToTable("Judete");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.Medic", b =>
+            modelBuilder.Entity("CLOUD.Medic", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -176,7 +165,7 @@ namespace CLOUD.Migrations
                     b.ToTable("Medici");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.MedicPacienti", b =>
+            modelBuilder.Entity("CLOUD.MedicPacienti", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -203,7 +192,7 @@ namespace CLOUD.Migrations
                     b.ToTable("MedicPacienti");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.Pacient", b =>
+            modelBuilder.Entity("CLOUD.Pacient", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -269,7 +258,7 @@ namespace CLOUD.Migrations
                     b.ToTable("Pacienti");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.Puls", b =>
+            modelBuilder.Entity("CLOUD.Puls", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -280,9 +269,6 @@ namespace CLOUD.Migrations
 
                     b.Property<Guid>("PacientId")
                         .HasColumnType("uuid");
-
-                    b.Property<DateTime>("Updated")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<float>("Valoare")
                         .HasColumnType("real");
@@ -291,60 +277,10 @@ namespace CLOUD.Migrations
 
                     b.HasIndex("PacientId");
 
-                    b.ToTable("Pulss");
+                    b.ToTable("Puls");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.Temperatura", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("PacientId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("Updated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("Valoare")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PacientId");
-
-                    b.ToTable("Temperaturi");
-                });
-
-            modelBuilder.Entity("CLOUD.Auth.Umiditate", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("PacientId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("Updated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<float>("Valoare")
-                        .HasColumnType("real");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PacientId");
-
-                    b.ToTable("Umiditates");
-                });
-
-            modelBuilder.Entity("CLOUD.Auth.User", b =>
+            modelBuilder.Entity("CLOUD.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -376,106 +312,49 @@ namespace CLOUD.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.Alergie", b =>
+            modelBuilder.Entity("CLOUD.ValoriNormaleSenzori", b =>
                 {
-                    b.HasOne("CLOUD.Auth.DateMedicale", null)
-                        .WithMany("Alergii")
-                        .HasForeignKey("DateMedicaleId");
-                });
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
 
-            modelBuilder.Entity("CLOUD.Auth.DateMedicale", b =>
-                {
-                    b.HasOne("CLOUD.Auth.IstoricMedical", "IstoricMedical")
-                        .WithMany()
-                        .HasForeignKey("IstoricMedicalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp with time zone");
 
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
-                        .WithMany()
-                        .HasForeignKey("PacientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<Guid>("PacientId")
+                        .HasColumnType("uuid");
 
-                    b.Navigation("IstoricMedical");
+                    b.Property<int>("PulsMaxim")
+                        .HasColumnType("integer");
 
-                    b.Navigation("Pacient");
-                });
+                    b.Property<int>("PulsMinim")
+                        .HasColumnType("integer");
 
-            modelBuilder.Entity("CLOUD.Auth.ECG", b =>
-                {
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
-                        .WithMany()
-                        .HasForeignKey("PacientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("TemperaturaMaxima")
+                        .HasColumnType("integer");
 
-                    b.Navigation("Pacient");
-                });
+                    b.Property<int>("TemperaturaMinima")
+                        .HasColumnType("integer");
 
-            modelBuilder.Entity("CLOUD.Auth.Medic", b =>
-                {
-                    b.HasOne("CLOUD.Auth.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("UmiditateMaxima")
+                        .HasColumnType("integer");
 
-                    b.Navigation("User");
-                });
+                    b.Property<int>("UmiditateMinima")
+                        .HasColumnType("integer");
 
-            modelBuilder.Entity("CLOUD.Auth.MedicPacienti", b =>
-                {
-                    b.HasOne("CLOUD.Auth.Medic", "Medic")
-                        .WithMany()
-                        .HasForeignKey("MedicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<DateTime>("Updated")
+                        .HasColumnType("timestamp with time zone");
 
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
-                        .WithMany()
-                        .HasForeignKey("PacientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasKey("Id");
 
-                    b.Navigation("Medic");
+                    b.HasIndex("PacientId");
 
-                    b.Navigation("Pacient");
-                });
-
-            modelBuilder.Entity("CLOUD.Auth.Pacient", b =>
-                {
-                    b.HasOne("CLOUD.Auth.Judet", "Judet")
-                        .WithMany()
-                        .HasForeignKey("JudetId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CLOUD.Auth.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Judet");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("CLOUD.Auth.Puls", b =>
-                {
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
-                        .WithMany()
-                        .HasForeignKey("PacientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pacient");
+                    b.ToTable("ValoriNormaleSenzori");
                 });
 
             modelBuilder.Entity("CLOUD.Auth.Temperatura", b =>
                 {
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
+                    b.HasOne("CLOUD.Pacient", "Pacient")
                         .WithMany()
                         .HasForeignKey("PacientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -486,7 +365,7 @@ namespace CLOUD.Migrations
 
             modelBuilder.Entity("CLOUD.Auth.Umiditate", b =>
                 {
-                    b.HasOne("CLOUD.Auth.Pacient", "Pacient")
+                    b.HasOne("CLOUD.Pacient", "Pacient")
                         .WithMany()
                         .HasForeignKey("PacientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -495,9 +374,97 @@ namespace CLOUD.Migrations
                     b.Navigation("Pacient");
                 });
 
-            modelBuilder.Entity("CLOUD.Auth.DateMedicale", b =>
+            modelBuilder.Entity("CLOUD.DateMedicale", b =>
                 {
-                    b.Navigation("Alergii");
+                    b.HasOne("CLOUD.Pacient", "Pacient")
+                        .WithMany()
+                        .HasForeignKey("PacientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pacient");
+                });
+
+            modelBuilder.Entity("CLOUD.ECG", b =>
+                {
+                    b.HasOne("CLOUD.Pacient", "Pacient")
+                        .WithMany()
+                        .HasForeignKey("PacientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pacient");
+                });
+
+            modelBuilder.Entity("CLOUD.Medic", b =>
+                {
+                    b.HasOne("CLOUD.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CLOUD.MedicPacienti", b =>
+                {
+                    b.HasOne("CLOUD.Medic", "Medic")
+                        .WithMany()
+                        .HasForeignKey("MedicId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CLOUD.Pacient", "Pacient")
+                        .WithMany()
+                        .HasForeignKey("PacientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Medic");
+
+                    b.Navigation("Pacient");
+                });
+
+            modelBuilder.Entity("CLOUD.Pacient", b =>
+                {
+                    b.HasOne("CLOUD.Judet", "Judet")
+                        .WithMany()
+                        .HasForeignKey("JudetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CLOUD.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Judet");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CLOUD.Puls", b =>
+                {
+                    b.HasOne("CLOUD.Pacient", "Pacient")
+                        .WithMany()
+                        .HasForeignKey("PacientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pacient");
+                });
+
+            modelBuilder.Entity("CLOUD.ValoriNormaleSenzori", b =>
+                {
+                    b.HasOne("CLOUD.Pacient", "Pacient")
+                        .WithMany()
+                        .HasForeignKey("PacientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pacient");
                 });
 #pragma warning restore 612, 618
         }

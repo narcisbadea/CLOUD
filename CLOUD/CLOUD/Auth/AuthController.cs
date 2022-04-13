@@ -1,7 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using CLOUD.Auth.UserService;
+using CLOUD.UserService;
 using CLOUD.DataBase;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;

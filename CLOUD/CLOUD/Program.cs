@@ -1,5 +1,5 @@
 using System.Text;
-using CLOUD.Auth.UserService;
+using CLOUD.UserService;
 using CLOUD.DataBase;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors;

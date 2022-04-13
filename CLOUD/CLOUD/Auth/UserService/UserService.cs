@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace CLOUD.Auth.UserService
+namespace CLOUD.UserService
 {
     public class UserService : IUserService
     {
