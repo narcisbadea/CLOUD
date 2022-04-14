@@ -42,6 +42,7 @@ namespace CLOUD.Auth
         }
         
         [HttpGet("Date")]
+        [Authorize]
         public async Task<List<User>> GetByDate()
         {
             var li = await _dbContext.Users.Where(u => u.Created.Hour == 15) .ToListAsync();
@@ -49,19 +50,21 @@ namespace CLOUD.Auth
         }
 
         [HttpPost("register/medic")]
+        [Authorize]
         public async Task<ActionResult<Medic>> RegisterMedic(MedicRequest medicRequest)
         {
             var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == _userService.GetMyName());
             var medic = new Medic
             {
-                Id = new Guid(),
+                Id = Guid.NewGuid(),
                 Created = DateTime.UtcNow,
                 TipMedic = medicRequest.TipMedic,
                 Updated = DateTime.UtcNow,
                 User = user
             };
             var result = await _dbContext.Medici.AddAsync(medic);
-            return Ok(result);
+            await _dbContext.SaveChangesAsync();
+            return Ok(result.Entity);
         }
 
         [HttpPost("register")]
@@ -74,7 +77,7 @@ namespace CLOUD.Auth
                 Username = request.Username,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                Id = new Guid(),
+                Id = Guid.NewGuid(),
                 Created = DateTime.UtcNow,
                 Updated = DateTime.UtcNow
             };
