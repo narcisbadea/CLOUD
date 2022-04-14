@@ -53,7 +53,7 @@ namespace CLOUD.Auth
         [Authorize]
         public async Task<ActionResult<Medic>> RegisterMedic(MedicRequest medicRequest)
         {
-            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == _userService.GetMyName());
+            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == medicRequest.Username);
             var medic = new Medic
             {
                 Id = Guid.NewGuid(),
