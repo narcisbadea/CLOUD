@@ -52,6 +52,7 @@ namespace CLOUD.Auth
         [HttpPost("register/medic/{username}")]
         public async Task<ActionResult<User>> RegisterMedic(string username,MedicRequest medicRequest)
         {
+            Console.WriteLine(username);
             var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
 
             var medic = new Medic
