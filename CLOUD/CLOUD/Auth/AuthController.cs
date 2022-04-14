@@ -71,7 +71,7 @@ namespace CLOUD.Auth
         public async Task<ActionResult<Pacient>> RegisterPacient(string username, PacientRequest pacientRequest)
         {
             var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
-            var jud = await _dbContext.Judete.FirstOrDefaultAsync(j => j.Jud == pacientRequest.Judet.Jud);
+            var jud = await _dbContext.Judete.FirstOrDefaultAsync(j => j.Jud == pacientRequest.Judet);
             var pacient = new Pacient
             {
                 Id = Guid.NewGuid(),
