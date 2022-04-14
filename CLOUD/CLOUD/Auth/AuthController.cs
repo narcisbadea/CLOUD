@@ -48,7 +48,21 @@ namespace CLOUD.Auth
             return li;
         }
 
-        
+        [HttpPost("register/medic")]
+        public async Task<ActionResult<Medic>> RegisterMedic(MedicRequest medicRequest)
+        {
+            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == _userService.GetMyName());
+            var medic = new Medic
+            {
+                Id = new Guid(),
+                Created = DateTime.UtcNow,
+                TipMedic = medicRequest.TipMedic,
+                Updated = DateTime.UtcNow,
+                User = user
+            };
+            var result = await _dbContext.Medici.AddAsync(medic);
+            return Ok(result);
+        }
 
         [HttpPost("register")]
         public async Task<ActionResult<User>> Register(UserRequest request)
