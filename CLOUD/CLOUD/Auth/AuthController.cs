@@ -50,9 +50,8 @@ namespace CLOUD.Auth
         }
 
         [HttpPost("register/medic/{username}")]
-        public async Task<ActionResult<User>> RegisterMedic(string username,MedicRequest medicRequest)
+        public async Task<ActionResult<Medic>> RegisterMedic(string username,MedicRequest medicRequest)
         {
-            Console.WriteLine(username);
             var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
 
             var medic = new Medic
@@ -66,6 +65,32 @@ namespace CLOUD.Auth
             var result = await _dbContext.Medici.AddAsync(medic);
             await _dbContext.SaveChangesAsync();
             return Ok(result.Entity);
+        }
+
+        [HttpPost("register/pagient/{username}")]
+        public async Task<ActionResult<Pacient>> RegisterPacient(string username, PacientRequest pacientRequest)
+        {
+            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
+            var jud = await _dbContext.Judete.FirstOrDefaultAsync(j => j.Jud == pacientRequest.Judet.Jud);
+            var pacient = new Pacient
+            {
+                Id = Guid.NewGuid(),
+                CNP = pacientRequest.CNP,
+                Created = DateTime.UtcNow,
+                Email = pacientRequest.Email,
+                Judet = jud,
+                Localitate = pacientRequest.Localitate,
+                LocDeMunca = pacientRequest.LocDeMunca,
+                Numar = pacientRequest.Numar,
+                Nume = pacientRequest.Numar,
+                Prenume = pacientRequest.Prenume,
+                Updated = DateTime.UtcNow,
+                Profestie = pacientRequest.Profestie,
+                Telefon = pacientRequest.Telefon
+            };
+            var result = await _dbContext.Pacienti.AddAsync(pacient);
+            await _dbContext.SaveChangesAsync();
+            return Ok(result);
         }
 
         [HttpPost("register")]
