@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220413162146_init.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220413162146_init.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Views/MedicRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Views/MedicRequest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +111,7 @@
       <workItem from="1649752347051" duration="619000" />
       <workItem from="1649861898046" duration="5621000" />
       <workItem from="1649878446566" duration="191000" />
-      <workItem from="1649916422432" duration="2827000" />
+      <workItem from="1649916422432" duration="3959000" />
     </task>
     <servers />
   </component>
