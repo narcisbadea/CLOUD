@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using AutoMapper;
 using CLOUD.UserService;
 using CLOUD.DataBase;
 using Microsoft.AspNetCore.Authorization;
@@ -17,10 +18,12 @@ namespace CLOUD.Auth
     {
         private readonly IConfiguration _configuration;
         private readonly IUserService _userService;
+        private readonly IMapper _mapper;
         private readonly AppDbContext _dbContext;
 
-        public AuthController(IConfiguration configuration, IUserService userService,AppDbContext dbContext)
+        public AuthController(IConfiguration configuration, IUserService userService,AppDbContext dbContext, IMapper mapper)
         {
+            _mapper = mapper;
             _configuration = configuration;
             _userService = userService;
             _dbContext = dbContext;
@@ -67,30 +70,58 @@ namespace CLOUD.Auth
             return Ok(result.Entity);
         }
 
-        [HttpPost("register/pagient/{username}")]
-        public async Task<ActionResult<Pacient>> RegisterPacient(string username, PacientRequest pacientRequest)
+        [Authorize]
+        [HttpPost("register/pacient")]
+        public async Task<ActionResult<Pacient>> RegisterPacient(PacientRequest pacientRequest)
         {
-            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
-            var jud = await _dbContext.Judete.FirstOrDefaultAsync(j => j.Jud == pacientRequest.Judet);
+            CreatePasswordHash(pacientRequest.Password, out byte[] passwordHash, out byte[] passwordSalt);
+            
+            var user = new User
+            {
+                Username = pacientRequest.Username,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                Id = Guid.NewGuid(),
+                Created = DateTime.UtcNow,
+                Updated = DateTime.UtcNow
+            };
+            await _dbContext.Users.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
+            
             var pacient = new Pacient
             {
+                User = user,
                 Id = Guid.NewGuid(),
                 CNP = pacientRequest.CNP,
                 Created = DateTime.UtcNow,
                 Email = pacientRequest.Email,
-                Judet = jud,
+                Judet = await _dbContext.Judete.FirstOrDefaultAsync(j => j.Jud == pacientRequest.Judet),
                 Localitate = pacientRequest.Localitate,
                 LocDeMunca = pacientRequest.LocDeMunca,
                 Numar = pacientRequest.Numar,
-                Nume = pacientRequest.Numar,
+                Nume = pacientRequest.Nume,
                 Prenume = pacientRequest.Prenume,
                 Updated = DateTime.UtcNow,
                 Profestie = pacientRequest.Profestie,
-                Telefon = pacientRequest.Telefon
+                Telefon = pacientRequest.Telefon,
+                Varsta = pacientRequest.Varsta
             };
             var result = await _dbContext.Pacienti.AddAsync(pacient);
             await _dbContext.SaveChangesAsync();
-            return Ok(result);
+
+            var med = await _dbContext.Medici.FirstOrDefaultAsync(m => _userService.GetMyName() == m.User.Username); 
+            var medicPacient = new MedicPacienti
+            {
+                Id = Guid.NewGuid(),
+                Created = DateTime.UtcNow,
+                Updated = DateTime.UtcNow,
+                Medic = med,
+                Pacient = pacient
+            };
+
+            await _dbContext.MedicPacienti.AddAsync(medicPacient);
+            await _dbContext.SaveChangesAsync();
+            return Ok(result.Entity);
         }
 
         [HttpPost("register")]

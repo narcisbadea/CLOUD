@@ -11,8 +11,8 @@ public class Pacient : Entity
     [Required] public Judet Judet { get; set; }
     [Required] public string Localitate { get; set; }
     [Required] public string Numar { get; set; }
-    [Required] public string Telefon { get; set; }
+    [Required] [Phone] public string Telefon { get; set; }
     [Required] [EmailAddress] public string Email { get; set; }
-    [Required] [Phone] public string Profestie { get; set; }
+    [Required] public string Profestie { get; set; }
     [Required] public string LocDeMunca { get; set; }
 }

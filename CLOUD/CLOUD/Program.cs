@@ -1,6 +1,7 @@
 using System.Text;
 using CLOUD.UserService;
 using CLOUD.DataBase;
+using CLOUD.Utils.Mappers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,8 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+services.AddAutoMapper(typeof(MappingProfiles));
 
 // Add services to the container.
 
