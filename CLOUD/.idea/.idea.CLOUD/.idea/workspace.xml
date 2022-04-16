@@ -5,32 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Utils/Mappers/MappingProfiles.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Views/PacientResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLOUD/Views/PulsResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLOUD/Views/TemperaturaResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLOUD/Views/UmiditateResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/CLOUD.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/CLOUD.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Models/MedicPacienti.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Models/MedicPacienti.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Models/Pacient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Models/Pacient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Views/PacientRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Views/PacientRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Models/Temperatura.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Models/Temperatura.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2656e3487208acb3487490904326ac4e1fdc62459bbaf6dc682863a3c37a/ParameterExpression.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/55ed6ee557de3524b576e7488a18eeb88135c4998790a451c7fca1468b4a57/SpanHelpers.Byte.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fead5fbf2bee3da1b9f378a09d78479a62db80dae1e1c6453efdb0bc92a8/String.Comparison.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7cb7424fd293afbd058d95c82aaf7b12b3cf57037576ecc8fd333ccfad7ad/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/974fa14c57bab8fe29f1bddd39b1a6548b9cc8cf9e0ef5e670c2407a56d9/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a42ba4db448ed38dcb9fb39194c637a317a8281856b88e139e8a905ee6d12b/Guid.Windows.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bb3b57bbd3e6208326115a8db4c17a9132e5e26e1ba343a4b458163c201b/Unsafe.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,7 +41,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -121,6 +109,8 @@
       <workItem from="1649916422432" duration="7108000" />
       <workItem from="1650019869148" duration="3837000" />
       <workItem from="1650102179811" duration="3971000" />
+      <workItem from="1650111706113" duration="2052000" />
+      <workItem from="1650134413311" duration="780000" />
     </task>
     <servers />
   </component>
@@ -146,27 +136,13 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/CLOUD/Auth/AuthController.cs</url>
           <line>75</line>
-          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Auth\AuthController.cs" initialLine="71" containingFunctionPresentation="method 'RegisterPacient'">
-            <startOffsets>
-              <option value="2515" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2516" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Auth\AuthController.cs" initialLine="71" containingFunctionPresentation="method 'RegisterPacient'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/CLOUD/Auth/AuthController.cs</url>
           <line>111</line>
-          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Auth\AuthController.cs" initialLine="111" containingFunctionPresentation="method 'RegisterPacient'">
-            <startOffsets>
-              <option value="4022" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4126" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Auth\AuthController.cs" initialLine="111" containingFunctionPresentation="method 'RegisterPacient'" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

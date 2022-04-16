@@ -2,6 +2,6 @@
 
 public class Temperatura:EntityBase
 {
-    public int Valoare { get; set; }
+    public float Valoare { get; set; }
     public Pacient Pacient { get; set; }
 }

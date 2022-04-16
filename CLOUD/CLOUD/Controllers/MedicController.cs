@@ -37,4 +37,51 @@ public class MedicController : ControllerBase
        
         return Ok(pacienti);
     }
+
+    [HttpGet("/puls/{id}")]
+    public async Task<ActionResult<PulsResult>> getPuls(string id)
+    {
+        var puls = await _dbContext.Puls.Where(p => p.Pacient.Id.ToString() == id).ToListAsync();
+        var pulsResult = new List<PulsResult>();
+        foreach (var p in puls)
+        {
+            pulsResult.Add(new PulsResult
+            {
+                Created = p.Created,
+                Valoare = p.Valoare
+            });
+        }
+        return Ok(pulsResult);
+    }
+    [HttpGet("/temperatura/{id}")]
+    public async Task<ActionResult<PulsResult>> getTemperatura(string id)
+    {
+        var temperatura = await _dbContext.Temperatura.Where(p => p.Pacient.Id.ToString() == id).ToListAsync();
+        var temperaturaResult = new List<TemperaturaResult>();
+        foreach (var p in temperatura)
+        {
+            temperaturaResult.Add(new TemperaturaResult
+            {
+                Created = p.Created,
+                Valoare = p.Valoare
+            });
+        }
+        return Ok(temperaturaResult);
+    }
+    
+    [HttpGet("/umiditate/{id}")]
+    public async Task<ActionResult<UmiditateResult>> getUmiditate(string id)
+    {
+        var umiditate = await _dbContext.Umiditate.Where(p => p.Pacient.Id.ToString() == id).ToListAsync();
+        var umiditateResult = new List<UmiditateResult>();
+        foreach (var p in umiditate)
+        {
+            umiditateResult.Add(new UmiditateResult
+            {
+                Created = p.Created,
+                Valoare = p.Valoare
+            });
+        }
+        return Ok(umiditateResult);
+    }
 }
