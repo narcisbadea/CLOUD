@@ -103,7 +103,7 @@ namespace CLOUD.Auth
                 Nume = pacientRequest.Nume,
                 Prenume = pacientRequest.Prenume,
                 Updated = DateTime.UtcNow,
-                Profestie = pacientRequest.Profestie,
+                Profesie = pacientRequest.Profestie,
                 Telefon = pacientRequest.Telefon,
                 Varsta = pacientRequest.Varsta
             };
