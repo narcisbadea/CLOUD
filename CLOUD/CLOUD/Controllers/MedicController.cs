@@ -24,7 +24,7 @@ public class MedicController : ControllerBase
         _dbContext = dbContext;
     }
 
-    [HttpGet]
+    [HttpGet("/pacienti")]
     [Authorize]
     public async Task<ActionResult<Pacient>> getPacientiMedic()
     {
