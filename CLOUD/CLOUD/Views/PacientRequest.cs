@@ -16,6 +16,6 @@ public class PacientRequest
     [Required] public string Numar { get; set; }
     [Required] [Phone] public string Telefon { get; set; }
     [Required] [EmailAddress] public string Email { get; set; }
-    [Required] public string Profestie { get; set; }
+    [Required] public string Profesie { get; set; }
     [Required] public string LocDeMunca { get; set; }
 }

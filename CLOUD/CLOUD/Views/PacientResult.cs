@@ -13,6 +13,6 @@ public class PacientResult
     public string Numar { get; set; }
     public string Telefon { get; set; }
     public string Email { get; set; }
-    public string Profestie { get; set; }
+    public string Profesie { get; set; }
     public string LocDeMunca { get; set; }
 }
