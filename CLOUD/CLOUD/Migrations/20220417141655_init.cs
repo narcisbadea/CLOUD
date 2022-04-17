@@ -71,10 +71,11 @@ namespace CLOUD.Migrations
                     CNP = table.Column<string>(type: "text", nullable: false),
                     JudetId = table.Column<Guid>(type: "uuid", nullable: false),
                     Localitate = table.Column<string>(type: "text", nullable: false),
+                    Strada = table.Column<string>(type: "text", nullable: false),
                     Numar = table.Column<string>(type: "text", nullable: false),
                     Telefon = table.Column<string>(type: "text", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
-                    Profestie = table.Column<string>(type: "text", nullable: false),
+                    Profesie = table.Column<string>(type: "text", nullable: false),
                     LocDeMunca = table.Column<string>(type: "text", nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Updated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
@@ -191,7 +192,7 @@ namespace CLOUD.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Valoare = table.Column<int>(type: "integer", nullable: false),
+                    Valoare = table.Column<float>(type: "real", nullable: false),
                     PacientId = table.Column<Guid>(type: "uuid", nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },

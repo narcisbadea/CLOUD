@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220414083822_init.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220414083822_init.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220416184434_updateType.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220416184434_updateType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220417124759_strada.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220417124759_strada.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220417124955_strada2.0.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220417124955_strada2.0.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220417141215_profesie.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220417141215_profesie.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +113,7 @@
       <workItem from="1650102179811" duration="3971000" />
       <workItem from="1650111706113" duration="2052000" />
       <workItem from="1650134413311" duration="780000" />
-      <workItem from="1650194153256" duration="2697000" />
+      <workItem from="1650194153256" duration="3017000" />
     </task>
     <servers />
   </component>

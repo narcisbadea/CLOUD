@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CLOUD.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220417124955_strada2.0")]
-    partial class strada20
+    [Migration("20220417141655_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -234,7 +234,7 @@ namespace CLOUD.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Profestie")
+                    b.Property<string>("Profesie")
                         .IsRequired()
                         .HasColumnType("text");
 
