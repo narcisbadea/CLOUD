@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +101,7 @@
       <workItem from="1650102179811" duration="3971000" />
       <workItem from="1650111706113" duration="2052000" />
       <workItem from="1650134413311" duration="780000" />
-      <workItem from="1650194153256" duration="3625000" />
+      <workItem from="1650194153256" duration="4224000" />
     </task>
     <servers />
   </component>
