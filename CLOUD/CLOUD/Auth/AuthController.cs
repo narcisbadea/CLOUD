@@ -99,6 +99,7 @@ namespace CLOUD.Auth
                 Localitate = pacientRequest.Localitate,
                 LocDeMunca = pacientRequest.LocDeMunca,
                 Numar = pacientRequest.Numar,
+                Strada = pacientRequest.Strada,
                 Nume = pacientRequest.Nume,
                 Prenume = pacientRequest.Prenume,
                 Updated = DateTime.UtcNow,

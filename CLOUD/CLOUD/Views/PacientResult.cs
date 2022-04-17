@@ -9,6 +9,7 @@ public class PacientResult
     public string CNP { get; set; }
     public string Judet { get; set; }
     public string Localitate { get; set; }
+    public string Strada { get; set; }
     public string Numar { get; set; }
     public string Telefon { get; set; }
     public string Email { get; set; }

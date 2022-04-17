@@ -10,6 +10,7 @@ public class Pacient : Entity
     [Required] public string CNP { get; set; }
     [Required] public Judet Judet { get; set; }
     [Required] public string Localitate { get; set; }
+    [Required] public string Strada { get; set; }
     [Required] public string Numar { get; set; }
     [Required] [Phone] public string Telefon { get; set; }
     [Required] [EmailAddress] public string Email { get; set; }
