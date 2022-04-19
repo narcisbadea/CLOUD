@@ -33,6 +33,7 @@ public class MedicController : ControllerBase
             .Where(mp => mp.Medic == medic)
             .Include(p => p.Pacient)
             .Include(j => j.Pacient.Judet)
+            .Include(u => u.Pacient.User)
             .ToListAsync();
        
         return Ok(pacienti);

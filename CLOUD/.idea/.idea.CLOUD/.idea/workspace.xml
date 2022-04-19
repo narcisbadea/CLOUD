@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="" />
+    <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,6 +105,7 @@
       <workItem from="1650111706113" duration="2052000" />
       <workItem from="1650134413311" duration="780000" />
       <workItem from="1650194153256" duration="4224000" />
+      <workItem from="1650217416844" duration="600000" />
     </task>
     <servers />
   </component>
@@ -132,7 +136,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/CLOUD/Auth/AuthController.cs</url>
-          <line>112</line>
+          <line>113</line>
           <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Auth\AuthController.cs" initialLine="111" containingFunctionPresentation="method 'RegisterPacient'" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
