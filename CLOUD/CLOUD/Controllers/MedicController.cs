@@ -39,7 +39,41 @@ public class MedicController : ControllerBase
         return Ok(pacienti);
     }
 
-    [HttpGet("/puls/{id}")]
+    [Authorize]
+    [HttpGet("/puls")]
+    public async Task<ActionResult<ActionResult<PulsResult>>> getPuls()
+    {
+        var medic = await _dbContext.Medici.FirstOrDefaultAsync(u => u.User.Username == _userService.GetMyName());
+        var pacienti = await _dbContext.MedicPacienti
+            .Where(mp => mp.Medic == medic)
+            .Include(p => p.Pacient)
+            .Include(j => j.Pacient.Judet)
+            .Include(u => u.Pacient.User)
+            .ToListAsync();
+        List<PulsResult> PR = new List<PulsResult>();
+        foreach (var pacient in pacienti)
+        {
+            var forAdd = new PulsResult();
+            forAdd.ID_Pacient = pacient.Pacient.Id;
+            var puls = await _dbContext.Puls.Where(p => p.Pacient.Id.ToString() == pacient.Pacient.Id.ToString()).ToListAsync();
+            List<PulsBase> Pulsuri = new List<PulsBase>();
+            foreach (var p in puls)
+            {
+                PulsBase pb = new PulsBase
+                {
+                    Created = p.Created,
+                    Valoare = p.Valoare
+                };
+                forAdd.Pulsuri.Add(pb);
+            }
+            PR.Add(forAdd);
+        }
+
+        return Ok(PR);
+
+    }
+
+    /*[HttpGet("/puls/{id}")]
     public async Task<ActionResult<PulsResult>> getPuls(string id)
     {
         var puls = await _dbContext.Puls.Where(p => p.Pacient.Id.ToString() == id).ToListAsync();
@@ -53,7 +87,7 @@ public class MedicController : ControllerBase
             });
         }
         return Ok(pulsResult);
-    }
+    }*/
     [HttpGet("/temperatura/{id}")]
     public async Task<ActionResult<PulsResult>> getTemperatura(string id)
     {
