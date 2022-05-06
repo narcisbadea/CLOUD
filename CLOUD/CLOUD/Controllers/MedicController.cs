@@ -39,7 +39,26 @@ public class MedicController : ControllerBase
         return Ok(pacienti);
     }
 
+
     [Authorize]
+    [HttpGet("/puls/{id}")]
+    public async Task<ActionResult<PulsBase>> getPuls(string id)
+    {
+        var pulsuri = await _dbContext.Puls.Where(p => p.Pacient.Id.ToString() == id).ToListAsync();
+        List<PulsBase> pb = new List<PulsBase>();
+        foreach (var puls in pulsuri)
+        {
+            pb.Add(new PulsBase
+            {
+                Created = puls.Created.Hour.ToString()+":"+puls.Created.Minute.ToString(),
+                Valoare = puls.Valoare
+            });
+        }
+
+        return Ok(pb);
+    }
+
+    /*[Authorize]
     [HttpGet("/puls")]
     public async Task<ActionResult<ActionResult<PulsResult>>> getPuls()
     {
@@ -71,7 +90,7 @@ public class MedicController : ControllerBase
 
         return Ok(PR);
 
-    }
+    }*/
 
     /*[HttpGet("/puls/{id}")]
     public async Task<ActionResult<PulsResult>> getPuls(string id)
