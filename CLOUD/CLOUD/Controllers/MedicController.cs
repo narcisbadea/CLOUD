@@ -61,7 +61,7 @@ public class MedicController : ControllerBase
             {
                 PulsBase pb = new PulsBase
                 {
-                    Created = p.Created,
+                    Created = p.Created.Day.ToString()+"."+p.Created.Month.ToString()+"."+p.Created.Year.ToString()+" "+p.Created.Hour.ToString()+p.Created.Minute.ToString(),
                     Valoare = p.Valoare
                 };
                 forAdd.Pulsuri.Add(pb);
