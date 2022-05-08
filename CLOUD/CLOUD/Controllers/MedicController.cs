@@ -124,7 +124,7 @@ public class MedicController : ControllerBase
         }
         return Ok(pulsResult);
     }*/
-    [HttpGet("/temperatura/{id}")]
+    /*[HttpGet("/temperatura/{id}")]
     public async Task<ActionResult<PulsResult>> getTemperatura(string id)
     {
         var temperatura = await _dbContext.Temperatura.Where(p => p.Pacient.Id.ToString() == id).ToListAsync();
@@ -138,7 +138,7 @@ public class MedicController : ControllerBase
             });
         }
         return Ok(temperaturaResult);
-    }
+    }*/
     
     [HttpGet("/umiditate/{id}")]
     public async Task<ActionResult<UmiditateResult>> getUmiditate(string id)
