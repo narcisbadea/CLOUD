@@ -75,6 +75,24 @@ public class MedicController : ControllerBase
 
         return Ok(tb);
     }
+
+    [Authorize]
+    [HttpGet("/umiditate/{id}")]
+    public async Task<ActionResult<ActionResult<UmiditateBase>>> getUmiditate(string id)
+    {
+        var um = await _dbContext.Umiditate.Where(u => u.Pacient.Id.ToString() == id).ToListAsync();
+        List<UmiditateBase> ub = new List<UmiditateBase>();
+        foreach (var umiditate in um)
+        {
+            ub.Add(new UmiditateBase
+            {
+                Created = umiditate.Created.Hour.ToString()+":"+umiditate.Created.Minute.ToString(),
+                Valoare = umiditate.Valoare
+            });
+        }
+
+        return Ok(ub);
+    }
     /*[Authorize]
     [HttpGet("/puls")]
     public async Task<ActionResult<ActionResult<PulsResult>>> getPuls()
@@ -140,7 +158,7 @@ public class MedicController : ControllerBase
         return Ok(temperaturaResult);
     }*/
     
-    [HttpGet("/umiditate/{id}")]
+    /*[HttpGet("/umiditate/{id}")]
     public async Task<ActionResult<UmiditateResult>> getUmiditate(string id)
     {
         var umiditate = await _dbContext.Umiditate.Where(p => p.Pacient.Id.ToString() == id).ToListAsync();
@@ -154,5 +172,5 @@ public class MedicController : ControllerBase
             });
         }
         return Ok(umiditateResult);
-    }
+    }*/
 }
