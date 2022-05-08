@@ -58,6 +58,23 @@ public class MedicController : ControllerBase
         return Ok(pb);
     }
 
+    [Authorize]
+    [HttpGet("/temperatura/{id}")]
+    public async Task<ActionResult<ActionResult<TempBase>>> getTemp(string id)
+    {
+        var temps = await _dbContext.Temperatura.Where(t => t.Pacient.Id.ToString() == id).ToListAsync();
+        List<TempBase> tb = new List<TempBase>();
+        foreach (var temp in temps)
+        {
+            tb.Add(new TempBase
+                {
+                    Created = temp.Created.Hour.ToString()+":"+temp.Created.Minute.ToString(),
+                    Valoare = temp.Valoare
+                });
+        }
+
+        return Ok(tb);
+    }
     /*[Authorize]
     [HttpGet("/puls")]
     public async Task<ActionResult<ActionResult<PulsResult>>> getPuls()
