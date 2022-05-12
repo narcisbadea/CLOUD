@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CLOUD/Views/UmiditateBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLOUD/Controllers/PacientController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLOUD/Views/PulsRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLOUD/Views/TempRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLOUD/Views/UmiditateRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +112,11 @@
       <workItem from="1650379468829" duration="723000" />
       <workItem from="1650384886726" duration="1170000" />
       <workItem from="1651854191259" duration="7158000" />
-      <workItem from="1652007207255" duration="1371000" />
+      <workItem from="1652007207255" duration="1971000" />
+      <workItem from="1652010355180" duration="131000" />
+      <workItem from="1652102842736" duration="171000" />
+      <workItem from="1652296861643" duration="435000" />
+      <workItem from="1652339868646" duration="3065000" />
     </task>
     <servers />
   </component>
@@ -128,23 +135,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CLOUD/Auth/AuthController.cs</url>
-          <line>75</line>
-          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Auth\AuthController.cs" initialLine="71" containingFunctionPresentation="method 'RegisterPacient'" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CLOUD/Auth/AuthController.cs</url>
-          <line>113</line>
-          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Auth\AuthController.cs" initialLine="111" containingFunctionPresentation="method 'RegisterPacient'" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
