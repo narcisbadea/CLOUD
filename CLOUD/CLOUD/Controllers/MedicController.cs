@@ -44,7 +44,7 @@ public class MedicController : ControllerBase
     [HttpGet("/puls/{id}")]
     public async Task<ActionResult<PulsBase>> getPuls(string id)
     {
-        var pulsuri = await _dbContext.Puls.Where(p => p.Pacient.Id.ToString() == id).ToListAsync();
+        var pulsuri = await _dbContext.Puls.Where(p => p.Pacient.Id.ToString() == id).OrderBy(p => p.Created).ToListAsync();
         List<PulsBase> pb = new List<PulsBase>();
         foreach (var puls in pulsuri)
         {
@@ -62,7 +62,7 @@ public class MedicController : ControllerBase
     [HttpGet("/temperatura/{id}")]
     public async Task<ActionResult<ActionResult<TempBase>>> getTemp(string id)
     {
-        var temps = await _dbContext.Temperatura.Where(t => t.Pacient.Id.ToString() == id).ToListAsync();
+        var temps = await _dbContext.Temperatura.Where(t => t.Pacient.Id.ToString() == id).OrderBy(t => t.Created).ToListAsync();
         List<TempBase> tb = new List<TempBase>();
         foreach (var temp in temps)
         {
@@ -80,7 +80,7 @@ public class MedicController : ControllerBase
     [HttpGet("/umiditate/{id}")]
     public async Task<ActionResult<ActionResult<UmiditateBase>>> getUmiditate(string id)
     {
-        var um = await _dbContext.Umiditate.Where(u => u.Pacient.Id.ToString() == id).ToListAsync();
+        var um = await _dbContext.Umiditate.Where(u => u.Pacient.Id.ToString() == id).OrderBy(u => u.Created).ToListAsync();
         List<UmiditateBase> ub = new List<UmiditateBase>();
         foreach (var umiditate in um)
         {

@@ -99,7 +99,7 @@ public class PacientController:ControllerBase
         {
             throw new ArgumentException("Pacient not found!");
         }
-        var um = await _dbContext.Umiditate.Where(u => u.Pacient.Id == pacient.Id).ToListAsync();
+        var um = await _dbContext.Umiditate.Where(u => u.Pacient.Id == pacient.Id).OrderBy(u => u.Created).ToListAsync();
         List<UmiditateBase> ub = new List<UmiditateBase>();
         foreach (var umiditate in um)
         {
@@ -123,7 +123,7 @@ public class PacientController:ControllerBase
         {
             throw new ArgumentException("Pacient not found!");
         }
-        var temps = await _dbContext.Temperatura.Where(t => t.Pacient.Id == pacient.Id).ToListAsync();
+        var temps = await _dbContext.Temperatura.Where(t => t.Pacient.Id == pacient.Id).OrderBy(t => t.Created).ToListAsync();
         List<TempBase> tb = new List<TempBase>();
         foreach (var temp in temps)
         {
@@ -148,7 +148,7 @@ public class PacientController:ControllerBase
             throw new ArgumentException("Pacient not found!");
         }
         
-        var pulsuri = await _dbContext.Puls.Where(p => p.Pacient.Id == pacient.Id).ToListAsync();
+        var pulsuri = await _dbContext.Puls.Where(p => p.Pacient.Id == pacient.Id).OrderBy(p => p.Created).ToListAsync();
         List<PulsBase> pb = new List<PulsBase>();
         foreach (var puls in pulsuri)
         {
