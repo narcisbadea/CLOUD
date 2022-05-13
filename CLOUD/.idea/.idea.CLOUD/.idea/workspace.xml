@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CLOUD/Controllers/PacientController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Views/PulsRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Views/TempRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLOUD/Views/UmiditateRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Auth/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Models/Medic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Models/Medic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Models/MedicPacienti.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Models/MedicPacienti.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Models/Pacient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Models/Pacient.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +116,9 @@
       <workItem from="1652010355180" duration="131000" />
       <workItem from="1652102842736" duration="171000" />
       <workItem from="1652296861643" duration="435000" />
-      <workItem from="1652339868646" duration="3065000" />
+      <workItem from="1652339868646" duration="3869000" />
+      <workItem from="1652458315942" duration="48000" />
+      <workItem from="1652458525377" duration="326000" />
     </task>
     <servers />
   </component>

@@ -1,11 +1,9 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using AutoMapper;
 using CLOUD.UserService;
 using CLOUD.DataBase;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -18,12 +16,10 @@ namespace CLOUD.Auth
     {
         private readonly IConfiguration _configuration;
         private readonly IUserService _userService;
-        private readonly IMapper _mapper;
         private readonly AppDbContext _dbContext;
 
-        public AuthController(IConfiguration configuration, IUserService userService,AppDbContext dbContext, IMapper mapper)
+        public AuthController(IConfiguration configuration, IUserService userService,AppDbContext dbContext)
         {
-            _mapper = mapper;
             _configuration = configuration;
             _userService = userService;
             _dbContext = dbContext;
@@ -110,7 +106,7 @@ namespace CLOUD.Auth
             var result = await _dbContext.Pacienti.AddAsync(pacient);
             await _dbContext.SaveChangesAsync();
 
-            var med = await _dbContext.Medici.FirstOrDefaultAsync(m => _userService.GetMyName() == m.User.Username); 
+            var med = await _dbContext.Medici.FirstOrDefaultAsync(m => m.User != null && _userService.GetMyName() == m.User.Username); 
             var medicPacient = new MedicPacienti
             {
                 Id = Guid.NewGuid(),
@@ -148,7 +144,7 @@ namespace CLOUD.Auth
         public async Task<IActionResult> Login(UserRequest request)
         {
             var user = await _dbContext.Users.FirstOrDefaultAsync(user => user.Username == request.Username);
-            if (user.Username != request.Username)
+            if (user?.Username != request.Username)
             {
                 return BadRequest("User not found.");
             }
@@ -158,11 +154,18 @@ namespace CLOUD.Auth
                 return BadRequest("Wrong password.");
             }
 
+            var role = "medic";
+            var isMedic = await _dbContext.Medici.FirstOrDefaultAsync(m => m.User != null && m.User.Id == user.Id);
+            if (isMedic == null)
+            {
+                role = "pacient";
+            }
             string token = CreateToken(user);
             return Ok(new
             {
                 user,
-                token
+                token,
+                role
             });
         }
 
