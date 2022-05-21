@@ -93,4 +93,19 @@ public class MedicController : ControllerBase
 
         return Ok(ub);
     }
+
+    [Authorize]
+    [HttpDelete("/remove-pacient/{id}")]
+    public async Task<ActionResult<Pacient>> deletePacient(string id)
+    {
+        var pacient = await _dbContext.Pacienti.FirstOrDefaultAsync(p => p.Id.ToString() == id);
+        if (pacient == null)
+        {
+            throw new ArgumentException("Pacient not found!");
+        }
+
+        _dbContext.Pacienti.Remove(pacient);
+        await _dbContext.SaveChangesAsync();
+        return Ok(pacient);
+    }
 }
