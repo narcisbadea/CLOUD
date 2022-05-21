@@ -104,7 +104,7 @@ public class MedicController : ControllerBase
             throw new ArgumentException("Pacient not found!");
         }
 
-        var user = await _dbContext.Users.FirstOrDefaultAsync(u => pacient.User.Id == u.Id);
+        var user = await _dbContext.Users.FirstOrDefaultAsync(u => pacient.User.Id.ToString() == u.Id.ToString());
         if (user == null)
         {
             throw new ArgumentException("User not found!");
