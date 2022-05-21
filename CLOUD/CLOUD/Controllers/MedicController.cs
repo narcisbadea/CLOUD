@@ -110,6 +110,7 @@ public class MedicController : ControllerBase
             throw new ArgumentException("User not found!");
         }
 
+        _dbContext.Pacienti.Remove(pacient);
         _dbContext.Users.Remove(user);
         
         await _dbContext.SaveChangesAsync();
