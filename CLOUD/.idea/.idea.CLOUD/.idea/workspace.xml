@@ -117,7 +117,7 @@
       <workItem from="1652807846336" duration="25000" />
       <workItem from="1652826610951" duration="616000" />
       <workItem from="1652830673774" duration="596000" />
-      <workItem from="1653131439062" duration="2196000" />
+      <workItem from="1653131439062" duration="2535000" />
     </task>
     <servers />
   </component>
@@ -142,16 +142,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs</url>
-          <line>99</line>
-          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Controllers\MedicController.cs" initialLine="99" containingFunctionPresentation="method 'deletePacient'">
+          <line>106</line>
+          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Controllers\MedicController.cs" initialLine="106" containingFunctionPresentation="method 'deletePacient'">
             <startOffsets>
-              <option value="3213" />
+              <option value="3433" />
             </startOffsets>
             <endOffsets>
-              <option value="3214" />
+              <option value="3539" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

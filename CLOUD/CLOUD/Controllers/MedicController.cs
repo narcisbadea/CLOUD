@@ -98,7 +98,7 @@ public class MedicController : ControllerBase
     [HttpDelete("/remove-pacient/{id}")]
     public async Task<ActionResult<Pacient>> deletePacient(string id)
     {
-        var pacient = await _dbContext.Pacienti.FirstOrDefaultAsync(p => p.Id.ToString() == id);
+        var pacient = await _dbContext.Pacienti.Include(p => p.User).FirstOrDefaultAsync(p => p.Id.ToString() == id);
         if (pacient == null)
         {
             throw new ArgumentException("Pacient not found!");
@@ -110,7 +110,7 @@ public class MedicController : ControllerBase
             throw new ArgumentException("User not found!");
         }
 
-        _dbContext.Pacienti.Remove(pacient);
+       // _dbContext.Pacienti.Remove(pacient);
         _dbContext.Users.Remove(user);
         
         await _dbContext.SaveChangesAsync();
