@@ -121,7 +121,7 @@ public class MedicController : ControllerBase
     [HttpGet("/pacient/{id}")]
     public async Task<ActionResult<Pacient>> getPacient(string id)
     {
-        var pacient = _dbContext.Pacienti.Include(u => u.User).FirstOrDefaultAsync(p => p.Id.ToString() == id);
+        var pacient = await _dbContext.Pacienti.Include(u => u.User).FirstOrDefaultAsync(p => p.Id.ToString() == id);
         if (pacient == null)
         {
             throw new ArgumentException("Pacient not found!");
