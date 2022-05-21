@@ -116,4 +116,17 @@ public class MedicController : ControllerBase
         await _dbContext.SaveChangesAsync();
         return Ok(pacient);
     }
+
+    [Authorize]
+    [HttpGet("/pacient/{id}")]
+    public async Task<ActionResult<Pacient>> getPacient(string id)
+    {
+        var pacient = _dbContext.Pacienti.FirstOrDefaultAsync(p => p.Id.ToString() == id);
+        if (pacient == null)
+        {
+            throw new ArgumentException("Pacient not found!");
+        }
+
+        return Ok(pacient);
+    }
 }
