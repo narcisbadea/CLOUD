@@ -65,8 +65,34 @@ public class PacientController:ControllerBase
         });
         return Ok(addTemperatura);
     }
-    
-    
+
+    [Authorize]
+    [HttpPut("{id}")]
+    public async Task<ActionResult<Pacient>> UpdatePacient(PacientRequestUpdate pacientRequestUpdate, string id)
+    {
+        var pacient = await _dbContext.Pacienti.FirstOrDefaultAsync(p => p.Id.ToString() == id);
+        if (pacient != null)
+        {
+            pacient.User.Username = pacientRequestUpdate.Username;
+            pacient.Nume = pacientRequestUpdate.Nume;
+            pacient.Prenume = pacientRequestUpdate.Prenume;
+            pacient.Varsta = pacientRequestUpdate.Varsta;
+            pacient.CNP = pacientRequestUpdate.CNP;
+            pacient.Judet = await _dbContext.Judete.FirstOrDefaultAsync(j => j.Jud == pacientRequestUpdate.Judet);
+            pacient.Localitate = pacientRequestUpdate.Localitate;
+            pacient.Strada = pacientRequestUpdate.Strada;
+            pacient.Numar = pacientRequestUpdate.Numar;
+            pacient.Telefon = pacientRequestUpdate.Telefon;
+            pacient.Email = pacientRequestUpdate.Email;
+            pacient.Profesie = pacientRequestUpdate.Profesie;
+            pacient.LocDeMunca = pacientRequestUpdate.LocDeMunca;
+            await _dbContext.SaveChangesAsync();
+            return Ok(pacient);
+        }
+
+        return Ok();
+    }
+
     [Authorize]
     [HttpPost("/umiditate")]
     public async Task<ActionResult<PulsResult>> postUmiditate(UmiditateRequest umiditateRequest)
