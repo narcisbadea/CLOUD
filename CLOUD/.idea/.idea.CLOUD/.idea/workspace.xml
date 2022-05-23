@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CLOUD/Views/PacientRequestUpdate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CLOUD/Controllers/PacientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Controllers/PacientController.cs" afterDir="false" />
     </list>
@@ -123,7 +122,7 @@
       <workItem from="1652830673774" duration="596000" />
       <workItem from="1653131439062" duration="4719000" />
       <workItem from="1653204844398" duration="147000" />
-      <workItem from="1653336910670" duration="702000" />
+      <workItem from="1653336910670" duration="1608000" />
     </task>
     <servers />
   </component>
@@ -142,5 +141,24 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CLOUD/Controllers/PacientController.cs</url>
+          <line>71</line>
+          <properties documentPath="C:\RepoFacultate\IP\CLOUD\CLOUD\CLOUD\Controllers\PacientController.cs" initialLine="71" containingFunctionPresentation="method 'UpdatePacient'">
+            <startOffsets>
+              <option value="2288" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2289" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

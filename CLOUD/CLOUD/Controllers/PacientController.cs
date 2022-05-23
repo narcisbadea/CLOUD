@@ -70,7 +70,10 @@ public class PacientController:ControllerBase
     [HttpPut("{id}")]
     public async Task<ActionResult<Pacient>> UpdatePacient(PacientRequestUpdate pacientRequestUpdate, string id)
     {
-        var pacient = await _dbContext.Pacienti.FirstOrDefaultAsync(p => p.Id.ToString() == id);
+        var pacient = await _dbContext.Pacienti
+            .Include(J => J.Judet)
+            .Include(u => u.User)
+            .FirstOrDefaultAsync(p => p.Id.ToString() == id);
         if (pacient != null)
         {
             pacient.User.Username = pacientRequestUpdate.Username;
