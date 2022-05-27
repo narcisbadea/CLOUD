@@ -97,6 +97,27 @@ public class PacientController:ControllerBase
     }
 
     [Authorize]
+    [HttpPost("/ecg")]
+    public async Task<ActionResult<ECGResult>> postECG(ECGRequest ecgRequest)
+    {
+        var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == _userService.GetMyName());
+        var pacient = await _dbContext.Pacienti.FirstOrDefaultAsync(u => u.User.Id == user.Id);
+        if (pacient == null)
+        {
+            throw new ArgumentException("Pacient not found!");
+        }
+
+        var addECG = await _dbContext.Ecg.AddAsync(new ECG
+        {
+            Created = DateTime.UtcNow,
+            Id = Guid.NewGuid(),
+            Pacient = pacient,
+            Valori = ecgRequest.Valori
+        });
+        return Ok(addECG);
+    }
+
+    [Authorize]
     [HttpPost("/umiditate")]
     public async Task<ActionResult<PulsResult>> postUmiditate(UmiditateRequest umiditateRequest)
     {
@@ -117,7 +138,24 @@ public class PacientController:ControllerBase
         });
         return Ok(addUmiditate);
     }
-    
+
+    [Authorize]
+    [HttpGet("/ecg")]
+    public async Task<ActionResult<ECG>> GetEcg()
+    {
+        var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == _userService.GetMyName());
+        var pacient = await _dbContext.Pacienti.FirstOrDefaultAsync(u => u.User.Id == user.Id);
+        if (pacient == null)
+        {
+            throw new ArgumentException("Pacient not found!");
+        }
+
+        var ecg = await _dbContext.Ecg.OrderBy(e => e.Created).LastOrDefaultAsync();
+
+
+        return Ok(ecg);
+    }
+
     [Authorize]
     [HttpGet("/umiditate")]
     public async Task<ActionResult<ActionResult<UmiditateBase>>> getUmiditate()

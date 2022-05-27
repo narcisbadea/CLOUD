@@ -163,7 +163,6 @@ namespace CLOUD.Auth
             string token = CreateToken(user);
             return Ok(new
             {
-                user,
                 token,
                 role
             });
