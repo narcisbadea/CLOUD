@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="" />
+    <list default="true" id="9f25c51d-8d5a-4cd1-abf9-9c800622b37a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CLOUD/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Controllers/MedicController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Controllers/PacientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CLOUD/Controllers/PacientController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220417141655_init.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220417141655_init.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220529185405_utcToNoe.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/20220529185405_utcToNoe.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLOUD/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +131,7 @@
       <workItem from="1653336910670" duration="2203000" />
       <workItem from="1653413689657" duration="1622000" />
       <workItem from="1653655466406" duration="1244000" />
-      <workItem from="1653848213672" duration="1998000" />
+      <workItem from="1653848213672" duration="3167000" />
     </task>
     <servers />
   </component>

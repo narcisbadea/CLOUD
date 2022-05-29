@@ -37,7 +37,7 @@ public class PacientController:ControllerBase
 
         var addPuls = await _dbContext.Puls.AddAsync(new Puls
         {
-            Created = DateTime.Now,
+            Created = DateTime.UtcNow,
             Id = Guid.NewGuid(),
             Pacient = pacient,
             Valoare = pulsRequest.Valoare
@@ -59,7 +59,7 @@ public class PacientController:ControllerBase
 
         var addTemperatura = await _dbContext.Temperatura.AddAsync(new Temperatura
         {
-            Created = DateTime.Now,
+            Created = DateTime.UtcNow,
             Id = Guid.NewGuid(),
             Pacient = pacient,
             Valoare = tempRequest.Valoare
@@ -111,7 +111,7 @@ public class PacientController:ControllerBase
 
         var addECG = await _dbContext.Ecg.AddAsync(new ECG
         {
-            Created = DateTime.Now,
+            Created = DateTime.UtcNow,
             Id = Guid.NewGuid(),
             Pacient = pacient,
             Valori = ecgRequest.Valori
@@ -133,7 +133,7 @@ public class PacientController:ControllerBase
 
         var addUmiditate = await _dbContext.Umiditate.AddAsync(new Umiditate
         {
-            Created = DateTime.Now,
+            Created = DateTime.UtcNow,
             Id = Guid.NewGuid(),
             Pacient = pacient,
             Valoare = umiditateRequest.Valoare
@@ -170,7 +170,7 @@ public class PacientController:ControllerBase
             throw new ArgumentException("Pacient not found!");
         }
         var um = await _dbContext.Umiditate
-            .Where(u => u.Pacient.Id == pacient.Id && u.Created.Day == DateTime.Now.Day)
+            .Where(u => u.Pacient.Id == pacient.Id && u.Created.Day == DateTime.UtcNow.Day)
             .OrderBy(u => u.Created)
             .ToListAsync();
         List<UmiditateBase> ub = new List<UmiditateBase>();
@@ -178,7 +178,7 @@ public class PacientController:ControllerBase
         {
             ub.Add(new UmiditateBase
             {
-                Created = umiditate.Created.Hour.ToString()+":"+umiditate.Created.Minute.ToString(),
+                Created = umiditate.Created.Hour+2.ToString()+":"+umiditate.Created.Minute.ToString(),
                 Valoare = umiditate.Valoare
             });
         }
@@ -197,7 +197,7 @@ public class PacientController:ControllerBase
             throw new ArgumentException("Pacient not found!");
         }
         var temps = await _dbContext.Temperatura
-            .Where(t => t.Pacient.Id == pacient.Id && t.Created.Day == DateTime.Now.Day)
+            .Where(t => t.Pacient.Id == pacient.Id && t.Created.Day == DateTime.UtcNow.Day)
             .OrderBy(t => t.Created)
             .ToListAsync();
         List<TempBase> tb = new List<TempBase>();
@@ -205,7 +205,7 @@ public class PacientController:ControllerBase
         {
             tb.Add(new TempBase
             {
-                Created = temp.Created.Hour.ToString()+":"+temp.Created.Minute.ToString(),
+                Created = temp.Created.Hour+2.ToString()+":"+temp.Created.Minute.ToString(),
                 Valoare = temp.Valoare
             });
         }
@@ -225,7 +225,7 @@ public class PacientController:ControllerBase
         }
         
         var pulsuri = await _dbContext.Puls
-            .Where(p => p.Pacient.Id == pacient.Id && p.Created.Day == DateTime.Now.Day)
+            .Where(p => p.Pacient.Id == pacient.Id && p.Created.Day == DateTime.UtcNow.Day)
             .OrderBy(p => p.Created)
             .ToListAsync();
         List<PulsBase> pb = new List<PulsBase>();
@@ -233,7 +233,7 @@ public class PacientController:ControllerBase
         {
             pb.Add(new PulsBase
             {
-                Created = puls.Created.Hour.ToString()+":"+puls.Created.Minute.ToString(),
+                Created = puls.Created.Hour+2.ToString()+":"+puls.Created.Minute.ToString(),
                 Valoare = puls.Valoare
             });
         }

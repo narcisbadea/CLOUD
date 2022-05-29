@@ -43,7 +43,7 @@ namespace CLOUD.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: true),
                     TipMedic = table.Column<string>(type: "text", nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Updated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
@@ -55,8 +55,7 @@ namespace CLOUD.Migrations
                         name: "FK_Medici_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -146,7 +145,7 @@ namespace CLOUD.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     PacientId = table.Column<Guid>(type: "uuid", nullable: false),
-                    MedicId = table.Column<Guid>(type: "uuid", nullable: false),
+                    MedicId = table.Column<Guid>(type: "uuid", nullable: true),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Updated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
@@ -157,8 +156,7 @@ namespace CLOUD.Migrations
                         name: "FK_MedicPacienti_Medici_MedicId",
                         column: x => x.MedicId,
                         principalTable: "Medici",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_MedicPacienti_Pacienti_PacientId",
                         column: x => x.PacientId,

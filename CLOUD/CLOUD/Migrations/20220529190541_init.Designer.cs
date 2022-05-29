@@ -13,7 +13,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CLOUD.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220417141655_init")]
+    [Migration("20220529190541_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -157,7 +157,7 @@ namespace CLOUD.Migrations
                     b.Property<DateTime>("Updated")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -176,7 +176,7 @@ namespace CLOUD.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("MedicId")
+                    b.Property<Guid?>("MedicId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("PacientId")
@@ -406,9 +406,7 @@ namespace CLOUD.Migrations
                 {
                     b.HasOne("CLOUD.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -417,9 +415,7 @@ namespace CLOUD.Migrations
                 {
                     b.HasOne("CLOUD.Medic", "Medic")
                         .WithMany()
-                        .HasForeignKey("MedicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MedicId");
 
                     b.HasOne("CLOUD.Pacient", "Pacient")
                         .WithMany()
