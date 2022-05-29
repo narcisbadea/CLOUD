@@ -42,7 +42,8 @@ public class PacientController:ControllerBase
             Pacient = pacient,
             Valoare = pulsRequest.Valoare
         });
-        return Ok(addPuls);
+        await _dbContext.SaveChangesAsync();
+        return Ok(addPuls.Entity);
     }
     
     [Authorize]
@@ -63,7 +64,8 @@ public class PacientController:ControllerBase
             Pacient = pacient,
             Valoare = tempRequest.Valoare
         });
-        return Ok(addTemperatura);
+        await _dbContext.SaveChangesAsync();
+        return Ok(addTemperatura.Entity);
     }
 
     [Authorize]
@@ -136,7 +138,8 @@ public class PacientController:ControllerBase
             Pacient = pacient,
             Valoare = umiditateRequest.Valoare
         });
-        return Ok(addUmiditate);
+        await _dbContext.SaveChangesAsync();
+        return Ok(addUmiditate.Entity);
     }
 
     [Authorize]
