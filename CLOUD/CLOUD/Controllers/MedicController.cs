@@ -45,7 +45,7 @@ public class MedicController : ControllerBase
     public async Task<ActionResult<PulsBase>> getPuls(string id)
     {
         var pulsuri = await _dbContext.Puls
-            .Where(p => p.Pacient.Id.ToString() == id && p.Created.Day == DateTime.UtcNow.Day)
+            .Where(p => p.Pacient.Id.ToString() == id && p.Created.Day == DateTime.Now.Day)
             .OrderBy(p => p.Created)
             .ToListAsync();
         List<PulsBase> pb = new List<PulsBase>();
@@ -66,7 +66,7 @@ public class MedicController : ControllerBase
     public async Task<ActionResult<ActionResult<TempBase>>> getTemp(string id)
     {
         var temps = await _dbContext.Temperatura
-            .Where(t => t.Pacient.Id.ToString() == id && t.Created.Day == DateTime.UtcNow.Day)
+            .Where(t => t.Pacient.Id.ToString() == id && t.Created.Day == DateTime.Now.Day)
             .OrderBy(t => t.Created)
             .ToListAsync();
         List<TempBase> tb = new List<TempBase>();
@@ -87,7 +87,7 @@ public class MedicController : ControllerBase
     public async Task<ActionResult<ActionResult<UmiditateBase>>> getUmiditate(string id)
     {
         var um = await _dbContext.Umiditate
-            .Where(u => u.Pacient.Id.ToString() == id && u.Created.Day == DateTime.UtcNow.Day)
+            .Where(u => u.Pacient.Id.ToString() == id && u.Created.Day == DateTime.Now.Day)
             .OrderBy(u => u.Created)
             .ToListAsync();
         List<UmiditateBase> ub = new List<UmiditateBase>();
