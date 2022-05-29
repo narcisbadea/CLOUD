@@ -53,7 +53,7 @@ public class MedicController : ControllerBase
         {
             pb.Add(new PulsBase
             {
-                Created = puls.Created.Hour+2.ToString()+":"+puls.Created.Minute.ToString(),
+                Created = (Convert.ToInt32(puls.Created.Hour)+2).ToString()+":"+puls.Created.Minute.ToString(),
                 Valoare = puls.Valoare
             });
         }
@@ -74,7 +74,7 @@ public class MedicController : ControllerBase
         {
             tb.Add(new TempBase
                 {
-                    Created = temp.Created.Hour+2.ToString()+":"+temp.Created.Minute.ToString(),
+                    Created = (Convert.ToInt32(temp.Created.Hour)+2).ToString()+":"+temp.Created.Minute.ToString(),
                     Valoare = temp.Valoare
                 });
         }
@@ -95,7 +95,7 @@ public class MedicController : ControllerBase
         {
             ub.Add(new UmiditateBase
             {
-                Created = umiditate.Created.Hour+2.ToString()+":"+umiditate.Created.Minute.ToString(),
+                Created = (Convert.ToInt32(umiditate.Created.Hour)+2).ToString()+":"+umiditate.Created.Minute.ToString(),
                 Valoare = umiditate.Valoare
             });
         }
