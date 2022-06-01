@@ -86,21 +86,20 @@ public class MedicController : ControllerBase
     [HttpGet("/umiditate/{id}")]
     public async Task<ActionResult<ActionResult<UmiditateBase>>> getUmiditate(string id)
     {
-        var um = await _dbContext.Umiditate
+        var valori = await _dbContext.Umiditate
             .Where(u => u.Pacient.Id.ToString() == id && u.Created.Day == DateTime.UtcNow.Day)
             .OrderBy(u => u.Created)
             .ToListAsync();
-        List<UmiditateBase> ub = new List<UmiditateBase>();
-        foreach (var umiditate in um)
+        List<UmiditateBase> umiditateBase = new List<UmiditateBase>();
+        foreach (var umiditate in valori)
         {
-            ub.Add(new UmiditateBase
+            umiditateBase.Add(new UmiditateBase
             {
                 Created = (Convert.ToInt32(umiditate.Created.Hour)+2).ToString()+":"+umiditate.Created.Minute.ToString(),
                 Valoare = umiditate.Valoare
             });
         }
-
-        return Ok(ub);
+        return Ok(umiditateBase);
     }
 
     [Authorize]
